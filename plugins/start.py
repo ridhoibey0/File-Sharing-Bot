@@ -116,12 +116,15 @@ async def start_command(client: Client, message: Message):
         return
     else:
         reply_markup = InlineKeyboardMarkup(
+           [InlineKeyboardButton("• ᴛᴇɴᴛᴀɴɢ sᴀʏᴀ •", callback_data="about")],
             [
-                [
-                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
-                ]
-            ]
+                InlineKeyboardButton("𝗖𝗛𝗔𝗡𝗡𝗘𝗟", url=client.invitelink),
+                InlineKeyboardButton("CHANNEL1", url=client.invitelink2),
+                InlineKeyboardButton("CHANNEL2", url=client.invitelink3),
+            ],
+            [
+                InlineKeyboardButton("• ᴛᴜᴛᴜᴘ •", callback_data="close"),
+            ],
         )
         if START_PIC:  # Check if START_PIC has a value
             await message.reply_photo(
@@ -174,12 +177,16 @@ async def not_joined(client: Client, message: Message):
         ButtonUrl = client.invitelink
 
     buttons = [
-        [
-            InlineKeyboardButton(
-                "Join Channel",
-                url = ButtonUrl)
+            [InlineKeyboardButton("• ᴛᴇɴᴛᴀɴɢ sᴀʏᴀ •", callback_data="about")],
+            [
+                InlineKeyboardButton("𝗖𝗛𝗔𝗡𝗡𝗘𝗟", url=client.invitelink),
+                InlineKeyboardButton("CHANNEL1", url=client.invitelink2),
+                InlineKeyboardButton("CHANNEL2", url=client.invitelink3),
+            ],
+            [
+                InlineKeyboardButton("• ᴛᴜᴛᴜᴘ •", callback_data="close"),
+            ],
         ]
-    ]
 
     try:
         buttons.append(
